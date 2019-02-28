@@ -1,1 +1,48 @@
-#1. Fundamentals#
+Link Ref: https://www.oracle.com/technetwork/java/seccodeguide-139067.html
+
+1. Fundamentals
+- Obviously no flaws rather than no obvious flaws
+- Design APIs to avoid security concerns
+  * Making a class final prevents a malicious subclass from adding finalizers, cloning, and overriding random methods 
+- Avoid duplication
+  * Changes may not be applied to all
+- Restrict privileges
+  * java.security.AccessController.doPrivileged
+- Establish trust boundaries
+  * A web browser is outside of the system for a web server. Equally, a web server is outside of the system for a web browser. 
+  * Therefore, web browser and server software should not rely upon the behavior of the other for security.
+- Minimise the number of permission checks
+  * SecurityManager checks
+- Encapsulate
+  * Interface of a method, class, package, and module should form a coherent set of behaviors, and no more.
+- Document security-related information
+  * Documentation should cover security-related information such as  permissions, security-related exceptions.
+  
+2. DDOS example
+- Requesting a large image size(SVG and font files) for  graphics.
+- Detailed logging of unusual behavior
+  * Excessive output to log files.
+- Zip Bomb
+  * Set limits on the decompressed data size
+  
+3. Confidential Information
+- Purge sensitive information from exceptions
+  * java.io.FileNotFoundException
+  * Hide locations of files in exception
+- Do not log highly sensitive information
+  * Password
+- Consider purging highly sensitive from memory after use
+
+4. Injection and Inclusion
+- JDBC
+  * Using PreparedStatement correctly
+  
+5. Prevent injection of exceptional floating point values
+  * Using NaN (not a number) or infinite values can be injected into applications via untrusted input data
+  
+6. Accessibility and Extensibility
+- Limit the accessibility of classes, interfaces, methods, and fields
+
+7. Input Validation
+
+8. Make public static fields final
