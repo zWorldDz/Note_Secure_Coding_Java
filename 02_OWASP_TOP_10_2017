@@ -1,10 +1,19 @@
 OWASP : Open Web Application Security Project
 OWASP TOP 10
 1. Injection
+    - Untrusted/Invalidated data is sent to server.
 2. Broken Authentication
+    - Involved authentication and session management 
+    - Items such as passwords, keys, session token
 3. Sensitive Data Exposure
+    - Do not properly protect sensitive data 
+    - Encryption at rest / in transit
 4. XML External Entities
+    - Older and poorly configured XML 
+    - URI handler, internal file shares, internal port scanning, remote code execution and ddos
 5. Broken Access Control
+    - Access unauthorized functionality / data
+    - Allow user bew sensitive files, modify other data, change access right.
 6. Security MisConfiguration
 7. Cross Site Scripting
 8. Insecure Deserialization
